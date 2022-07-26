@@ -4,7 +4,7 @@ import 'package:multiple_sqlite_tables_sample/repository/sqlite_repository.dart'
 final _foldersProvider =
     FutureProvider((ref) => ref.read(sqliteRepositoryProvider).getFolders());
 
-final folderProvider = StateNotifierProvider<FoldersController,
+final foldersProvider = StateNotifierProvider<FoldersController,
     AsyncValue<List<Map<String, dynamic>>>>((ref) {
   final folders = ref.watch(_foldersProvider);
   final sqliteRepo = ref.watch(sqliteRepositoryProvider);

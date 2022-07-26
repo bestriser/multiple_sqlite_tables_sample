@@ -34,6 +34,11 @@ class SQLiteRepository {
     return db!.query('folders');
   }
 
+  Future<List<Map<String, dynamic>>> getItems() async {
+    if (db == null) return [<String, dynamic>{}];
+    return db!.query('items');
+  }
+
   Future<void> insertFolderRaw() async {
     await db?.insert(
       'folders',
@@ -41,6 +46,16 @@ class SQLiteRepository {
         'id': const Uuid().v4(),
         'title': 'テスト',
         'created_at': DateTime.now().toString(),
+      },
+    );
+  }
+
+  Future<void> insertItemRaw() async {
+    await db?.insert(
+      'items',
+      {
+        'id': const Uuid().v4(),
+        'title': 'テスト',
       },
     );
   }

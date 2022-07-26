@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:multiple_sqlite_tables_sample/presentation/folders/folders_page.dart';
+import 'package:multiple_sqlite_tables_sample/presentation/root/root_page.dart';
 import 'package:multiple_sqlite_tables_sample/repository/sqlite_repository.dart';
 
 void main() async {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Multiple SQLite tables sample',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const FoldersPage(),
+      home: const RootPage(),
     );
   }
 }
