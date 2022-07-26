@@ -18,8 +18,12 @@ class FoldersController
   final SQLiteRepository sqliteRepo;
 
   Future<void> insertRaw() async {
-    await sqliteRepo.insertFolderRaw();
-    final folders = await sqliteRepo.getFolders();
-    state = AsyncValue.data(folders);
+    final folder = await sqliteRepo.insertFolderRaw();
+    final folders = state.value;
+    if (folders != null) {
+      state = AsyncValue.data([...state.value!, folder]);
+    } else {
+      state = AsyncValue.data([folder]);
+    }
   }
 }

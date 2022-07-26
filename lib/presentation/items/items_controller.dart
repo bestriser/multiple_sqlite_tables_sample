@@ -18,8 +18,12 @@ class ItemsController
   final SQLiteRepository sqliteRepo;
 
   Future<void> insertRaw() async {
-    await sqliteRepo.insertItemRaw();
-    final items = await sqliteRepo.getItems();
-    state = AsyncValue.data(items);
+    final item = await sqliteRepo.insertItemRaw();
+    final items = state.value;
+    if (items != null) {
+      state = AsyncValue.data([...state.value!, item]);
+    } else {
+      state = AsyncValue.data([item]);
+    }
   }
 }

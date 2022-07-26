@@ -7,9 +7,7 @@ final sqliteRepositoryProvider = Provider((ref) => SQLiteRepository());
 
 class SQLiteRepository {
   static final SQLiteRepository _instance = SQLiteRepository._internal();
-
   factory SQLiteRepository() => _instance;
-
   SQLiteRepository._internal();
 
   Database? db;
@@ -39,24 +37,19 @@ class SQLiteRepository {
     return db!.query('items');
   }
 
-  Future<void> insertFolderRaw() async {
-    await db?.insert(
-      'folders',
-      {
-        'id': const Uuid().v4(),
-        'title': 'テスト',
-        'created_at': DateTime.now().toString(),
-      },
-    );
+  Future<Map<String, dynamic>> insertFolderRaw() async {
+    final folder = {
+      'id': const Uuid().v4(),
+      'title': 'テスト',
+      'created_at': DateTime.now().toString(),
+    };
+    await db?.insert('folders', folder);
+    return folder;
   }
 
-  Future<void> insertItemRaw() async {
-    await db?.insert(
-      'items',
-      {
-        'id': const Uuid().v4(),
-        'title': 'テスト',
-      },
-    );
+  Future<Map<String, dynamic>> insertItemRaw() async {
+    final item = {'id': const Uuid().v4(), 'title': 'テスト'};
+    await db?.insert('items', item);
+    return item;
   }
 }
