@@ -1,16 +1,9 @@
 # multiple_sqlite_tables_sample
+以下の記事を参考にさせていただきながら<br>
+SQLiteに複数のテーブルを追加して<br>
+データの取得・更新・表示ができるようにしました。
+- [flutter sqfliteを使って複数のテーブルを作成する方法 - Qiita](https://qiita.com/takaking216/items/9a0b9b8349be13369228)
+- [【Flutter】SQLiteでデータの永続化をした簡単メモアプリ](https://qiita.com/takois/items/6cf59811d3af5b1d33aa)
 
-This is Flutter project for multiple SQLite tables sample.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# 実装結果
+https://user-images.githubusercontent.com/55462291/181129848-19f8f85e-0687-4743-a5cb-45158279e067.mp4
